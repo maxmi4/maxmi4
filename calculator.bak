@@ -1,0 +1,36 @@
+#!/usr/bin/env python3
+
+import sys
+import os.path
+
+if len(sys.argv) != 7:
+    print("Parameter Error")
+
+Cindex = sys.argv.index('-c')
+
+Sindex = sys.argv.index('-d')
+
+Findex = sys.argv.index('-o')
+
+configfile = sys.argv[Cindex+1]
+
+userfile = sys.argv[Sindex+1]
+
+salaryfile = sys.argv[Findex+1]
+
+a = os.path.isfile(configfile)
+
+b = os.path.isfile(userfile)
+
+if a == False or b == False:
+    print("Parameter Error")
+   
+with open(configfile) as file:
+    c = {}
+    c = file.readlines()
+        
+    
+print(c)
+print(type(c))
+    
+
