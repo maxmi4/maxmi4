@@ -24,13 +24,44 @@ b = os.path.isfile(userfile)
 
 if a == False or b == False:
     print("Parameter Error")
+
+# handle configfile: 
    
 with open(configfile) as file:
     c = {}
     c = file.readlines()
-        
-    
-print(c)
-print(type(c))
-    
 
+# take out of the value of the configfile
+
+def takevalue(value):
+    xixi = value
+    xixi = str(xixi)
+    xixi = xixi.split("=")
+    xixi = xixi[1]
+    xixi = xixi.strip()
+    xixi = float(xixi)
+    return xixi
+
+JiShuL = takevalue(c[0])
+JiShuH = takevalue(c[1])
+YangLao = takevalue(c[2])
+YiLiao = takevalue(c[3])
+ShiYe = takevalue(c[4])
+GongShang = takevalue(c[5])
+ShengYu = takevalue(c[6])
+GongJiJin = takevalue(c[7])
+
+# handle user.csv:
+
+with open(userfile) as file:
+    e = file.readlines()
+userlen = len(e)
+
+haha = []
+for i in range(userlen):
+    u1=str(e[i])
+    u1=u1.split(",") 
+    
+print(haha[0])    
+print(len(haha))
+print(type(haha))
